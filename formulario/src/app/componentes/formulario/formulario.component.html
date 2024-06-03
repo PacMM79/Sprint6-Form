@@ -1,0 +1,30 @@
+<h3>Formulario</h3>
+
+<form class="formulario" (ngSubmit)="enviarForm()" [formGroup]="formularioEjemplo" >
+  <div class="mb-3">
+    <label id="nombre" class="form-label">Nombre
+    <input type="text" formControlName="nombre" id="name" autocomplete="given-name">
+    <p *ngIf="formularioEjemplo.get('nombre')?.errors?.['required']">
+      El campo nombre es requerido
+    </p>
+    </label>
+  </div>
+  <div class="mb-3">
+    <label id="correo" class="form-label">Correo
+    <input type="text" formControlName="correo" id="email" autocomplete="email">
+    <p *ngIf="formularioEjemplo.get('correo')?.errors?.['required']">
+      El campo correo es requerido
+    </p>
+    </label>
+  </div>
+  <div class="mb-3">
+    <label id="password" class="form-label">Password
+    <input type="text" formControlName="password" id="password">
+    <p *ngIf="formularioEjemplo.get('password')?.errors?.['required']">
+      El campo password es requerido
+    </p>
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
